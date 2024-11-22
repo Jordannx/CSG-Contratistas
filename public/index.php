@@ -15,3 +15,8 @@ require __DIR__.'/../vendor/autoload.php';
 // Bootstrap Laravel and handle the request...
 (require_once __DIR__.'/../bootstrap/app.php')
     ->handleRequest(Request::capture());
+
+    $port = getenv('PORT') ?: 8000;
+$host = '0.0.0.0'; // Asegura que se escuche en todas las interfaces
+$server = 'php -S ' . $host . ':' . $port;
+exec($server);
